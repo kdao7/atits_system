@@ -1,0 +1,101 @@
+<%@ Master Language="VB" CodeFile="main.master.vb" Inherits="main" %>
+
+<%@ Register src="reportMenu.ascx" tagname="reportMenu" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-1.9.1.min.js") %>"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+
+<!--<script type="text/javascript" src="Scripts/jquery-1.4.1.js"></script>-->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+        .highlight
+        {
+        background-color:#9999FF;
+        } 
+        td { cursor:pointer; }
+    </style>
+<script type="text/javascript">
+    function BindEvents() {
+        $(document).ready(function() {
+
+            $('input[type="image"]').mouseover(function() {
+                $(this).animate({
+                    opacity: 0.5
+                }, 500);
+            });
+
+            $('input[type="image"]').mouseout(function() {
+                $(this).animate({
+                    opacity: 1
+                }, 500);
+            });
+
+            $('#tab').click(function() {
+                $('#contentMenu').slideDown();
+                setTimeout(function() {
+                    $("#contentMenu").slideUp();
+                }, 15000);
+            });
+
+        });
+    }
+    function tooltip() {
+        $(document).tooltip();
+    }
+    function callLoading(txt) {
+        if (txt == 'show') { $('#imgLoad').show().fadeOut(3000); } else { $('#imgLoad').hide(); }
+    }
+        </script>
+</head>
+<body>  
+        
+        <form id="form1" runat="server" >
+        <div id="container">
+  <div id="topimg">
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li>
+          <asp:HyperLink ID="hlIndex" runat="server" NavigateUrl="~/index.aspx">&#3627;&#3609;&#3657;&#3634;&#3649;&#3619;&#3585;</asp:HyperLink>
+        </li>
+      <li><a href="../../booking.aspx">&#3585;&#3634;&#3619;&#3592;&#3629;&#3591;&#3627;&#3621;&#3633;&#3585;&#3626;&#3641;&#3605;&#3619;</a></li>
+      </ul>
+  </div>
+  <div style="float: right; margin-bottom: -15px; margin-right: 30px;">
+  <div id="CollapsiblePanel1" class="CollapsiblePanel">
+  <div class="CollapsiblePanelTab" id="tab" tabindex="0">&#3648;&#3617;&#3609;&#3641;&#3619;&#3634;&#3618;&#3591;&#3634;&#3609;</div>
+  <div class="CollapsiblePanelContent" id="contentMenu" style="display:none">
+    <div>
+        <uc1:reportMenu ID="reportMenu1" runat="server" />
+        <br />
+        <asp:HyperLink ID="hlMainAdmin" runat="server" 
+            NavigateUrl="~/admin">&#3585;&#3621;&#3633;&#3610;&#3648;&#3617;&#3609;&#3641;&#3627;&#3621;&#3633;&#3585;</asp:HyperLink>
+    </div>
+    <br />
+  </div>
+</div>
+  </div>
+  <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+  <div id="content">
+    <h1>&#3619;&#3634;&#3618;&#3591;&#3634;&#3609;</h1>
+      <p>&nbsp;</p>
+</div>
+</asp:ContentPlaceHolder>
+<img id="imgLoad" alt="" class="style1" src="../../img/ajax-loading.gif"
+style="display: none; position: relative; top: 80%; right: 50%; bottom: 20%; left: 50%;" />
+</div>
+</form>
+</body>
+</html>

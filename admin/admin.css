@@ -1,0 +1,268 @@
+body {
+	margin : 0;
+	padding : 0;
+	font : 73% "Trebuchet MS", verdana, arial, sans-serif;
+	color : #333;
+	background-color: #FFFFCC;
+	background-attachment: fixed;
+	background-image: url(img/bird.png);
+	background-repeat: no-repeat;
+	background-position: top;
+}
+#container {
+	width : 900px;
+	margin-left : auto;
+	margin-right : auto;
+	padding : 0;
+	border : 5px solid #000000;
+	color : #333;
+	background-image: url(img/bgcontainer.png);
+	background-repeat: repeat;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+			/*TOP BANNER*/
+#topimg {
+	height : 300px;
+	padding : 0;
+	margin : 0;
+	color : #333;
+	background-image: url(img/topimg.jpg);
+	background-repeat: no-repeat;
+}
+#topimg h1 {
+	float : left;
+	margin : 10px 0 0 15px;
+	font-size : 150%;
+	letter-spacing: 3px;
+	color : #000;
+}
+			/*TOP NAVIGATIONY*/
+#navcontainer ul {
+	float : left;
+	width : 100%;
+	padding-left : 0;
+	font-size : 110%;
+	border-top : 1px solid #fff;
+	border-bottom : 1px solid #fff;
+	color : #333;
+	background-color: #FFFF66;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+#navcontainer ul li {
+display : inline;
+}
+#navcontainer ul li a {
+	float : left;
+	padding : 0.2em 1em;
+	text-decoration : none;
+	border-right : 1px solid #fff;
+	color : #333;
+	background-color: #FFFF66;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+#navcontainer ul li a:hover, #navcontainer ul li a#current {
+	color : #FFF;
+	background-color: #DED30C;
+}
+			/*MAIN CONTENT*/
+#content {
+	margin : 0 0 5px 170px;
+	padding : 5px;
+	border-left : 1px dashed #999;
+	color : #333;
+	background-color: inherit;
+}
+#content a:link, #content a:visited {
+    text-decoration : none;
+    background : inherit;
+    color : #0066FF;
+}
+#content a:hover 
+{
+    text-decoration : underline;
+    background : inherit;
+    color : #0099FF;
+}
+			/*SIDEBAR*/
+#sidebar {
+	float : left;
+	width : 160px;
+	margin : 0 10px 0 0;
+	padding : 5px;
+	color : #333;
+}
+			/*SIDE MENU*/
+.sidemenu ul {
+list-style-type : none;
+text-align : left;
+}
+.sidemenu ul li {
+	display : block;
+	color : #666;
+	background : inherit;
+}
+.sidemenu ul li a {
+	padding-left : 15px;
+	font : normal 11px "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, sans-serif;
+	text-decoration : none;
+	color : #000;
+	background-color: transparent;
+}
+.sidemenu ul li a:hover {
+	color : #666;
+	background-color: transparent;
+	background-image: url(img/arrow-hover.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.sidemenu ul li a#current {
+	color : #666;
+	background-color: transparent;
+	background-image: url(img/arrow-active.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.sidemenu ul li ol a 
+{
+    margin-left : -25px;
+}
+			/*FOOTER*/
+#footer {
+	clear : both;
+	padding : 5px;
+	margin : 0;
+	font-size : 90%;
+	border-top : 1px solid #fff;
+	color: #FFFFFF;
+	background-color: #000000;	
+}
+#footer a:link, #footer a:visited {
+	text-decoration : none;
+	background : inherit;
+	color : #F90;
+}
+#footer a:hover {
+	background: inherit;
+	color : #FF0;
+	border: 1px dashed #eee;
+}
+			/*TYPOGRAPHY*/
+p {
+line-height: 1.7em;
+margin : 15px;
+}
+h1 {
+margin-top : 10px;
+padding : 0;
+font-size : 140%;
+text-transform : uppercase;
+letter-spacing: 3px;
+color : #336633;
+background : inherit;
+}
+h2 {
+	margin : 10px 0 0 5px;
+	padding-left : 10px;
+	font-size : 120%;
+	text-transform : uppercase;
+	letter-spacing : 3px;
+	color : #fff;
+	background-color: #FFCC00;
+	font-family: "Comic Sans MS", cursive;
+}
+h3
+{
+    padding: 7px;
+    margin: 10px 0 0 5px;
+    color: #000;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+    border-bottom-color: #FFCC00;
+    font-weight: bold;
+    font-size: 120%;
+    font-family: 'Times New Roman' , Times, serif;
+}
+			/*CLASSES*/
+.img {
+float : left;
+padding : 10px;
+border : none;
+}
+.img a {
+border : none;
+}
+.post { 
+background : #eee;
+padding : 3px;
+margin : 20px 10px 0 5px;
+border : 0 dashed #8a795d;
+font-size : 90%;
+} 
+.post .date { 
+background : url(img/clock.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+} 
+.post .comments { 
+background : url(img/comment.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+} 
+.post .readmore { 
+background : url(img/document.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+} 
+blockquote {
+font-weight : bold;
+font-style : italic;
+color : #b29b35;
+}
+.pagelink a:link, .pagelink a:visited
+{
+    text-decoration: none;
+    background: inherit;
+    color: #000000;
+    border-left: solid 1px #CCC;
+    border-right: solid 1px #CCC;
+    border-top: solid 1px #CCC;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: CordiaUPC;
+}
+.pagelink a:hover
+{
+    border-left: solid 1px #333;
+    border-right: solid 1px #333;
+    border-top: solid 1px #333;
+    background: #FFFF77;
+    color: #91AE00;
+}
+.view
+{
+    color: Black;
+    background-image: url('img/bgview.png');
+    background-repeat: repeat-y;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: #CCCCCC;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.view:hover
+{
+    background-color: #f4f227;
+    background-image: none;
+}
+.clear
+{
+    clear:both;
+}

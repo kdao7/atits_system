@@ -1,0 +1,132 @@
+﻿<%@ Master Language="VB" CodeFile="main.master.vb" Inherits="main" %>
+
+<%@ Register src="sidebar.ascx" tagname="sidebar" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-1.9.1.min.js") %>"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+
+<!--<script type="text/javascript" src="Scripts/jquery-1.4.1.js"></script>-->
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+    function textStyle() {
+        $('input[type="text"]').css("border", "3px solid #FFFF66");
+        $('input[type="password"]').css("border", "3px solid #FFFF66");
+        $('textarea').css("border", "3px solid #FFFF66");
+
+        $('input[type="text"]').focus(function() {
+            $(this).parent().addClass("focus");
+        });
+
+        $('input[type="text"]').blur(function() {
+            $(this).parent().removeClass("focus");
+        });
+    }
+        
+            function BindEvents() {
+                $(document).ready(function() {
+
+                    $('input[type="image"]').mouseover(function() {
+                        $(this).animate({
+                            opacity: 0.5
+                        }, 500);
+                    });
+
+                    $('input[type="image"]').mouseout(function() {
+                        $(this).animate({
+                            opacity: 1
+                        }, 500);
+                    });
+                });
+    }
+
+    function showToolTip() {
+        $('input[type="text"] ~ div').addClass('tip');
+        $('input[type="text"]').focus(function() {
+            var id = $(this).attr('id');
+            id = '#' + id + ' ~ div';
+            $(id).slideDown();
+        });
+
+        $('input[type="text"]').blur(function() {
+            var id = $(this).attr('id');
+            id = '#' + id + ' ~ div';
+            var txt = $(this).val();
+            if (txt.length < 1) { $(id).slideDown(); }
+            else {
+                $(id).slideUp(); 
+            }
+        });
+    }
+
+    function tooltip() {
+        $(document).tooltip({
+      show: {
+        effect: "slideDown",
+        delay: 100
+        }
+      });
+    }
+    function slideGrid(id) {
+        setTimeout(function () {
+            $('#' + id).slideDown(500);
+        }, 500);
+    }
+        </script>
+</head>
+<body>  
+        
+        <form id="form1" runat="server" >
+        
+        <div id="container">
+  <div id="topimg">
+  </div>
+  <div id="navcontainer">
+    <ul id="navlist">
+      <li>
+          <asp:HyperLink ID="hlIndex" runat="server" NavigateUrl="~/index.aspx">&#3627;&#3609;&#3657;&#3634;&#3649;&#3619;&#3585;</asp:HyperLink>
+        </li>
+      <li>
+          <asp:HyperLink ID="hlHowtoBook" runat="server" 
+              NavigateUrl="~/howtobooking.aspx" Text="การจองหลักสูตร"></asp:HyperLink>
+      </li>
+      <li>
+          <asp:HyperLink ID="hlHowtoPay" runat="server" 
+              NavigateUrl="~/howtopay.aspx" Text="การชำระเงิน"></asp:HyperLink>
+      </li>
+      <li>
+          <asp:HyperLink ID="hlContact" runat="server" 
+              NavigateUrl="~/contact.aspx" Text="ติดต่อเรา"></asp:HyperLink>
+      </li>
+    </ul>
+  </div>
+  <div id="sidebar">
+    
+      <uc1:sidebar ID="sidebar1" runat="server" />
+    
+  </div>
+  <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+  <div id="content">
+    <h1>Welcome to <span style="color:#9C386A;">ATIT (Academi training information 
+        technology)</span></h1>
+    <blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+</div>
+</asp:ContentPlaceHolder>
+  <div id="footer">Design by <a href="mailto:bassnigro@gmail.com"> Me <br />
+  </a>Business Computer of Administrator in Krirk University<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"></a></div>
+</div>
+        </form>
+</body>
+</html>
